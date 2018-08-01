@@ -51,19 +51,19 @@ export default {
   		}
   	}
   },
-  created(){
-  	console.log(this.locatMsg)
-  	this.$center.$on('send-location',(city)=>{
-  		this.locatMsg = city
-  	})
-  },
-//activated(){
-//	this.$center.$on('send-location',(city)=>{
-//		this.locatMsg = city
-//	})
-//},
-  watch:{
+	created(){
+		this.$center.$on('send-city',(city)=>{
+			this.locatMsg = city
+		})
+	},
+	mounted(){
+	
+	},
+	activated(){
 
+	},
+  watch:{
+  	
   }
 }
 

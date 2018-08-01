@@ -16,7 +16,6 @@
 		},
 		methods:{
 			cityAction(index){
-//				console.log(this.cityList[index])
 				this.$center.$emit('send-city',this.cityList[index]);
 				this.$router.back();
 			}
