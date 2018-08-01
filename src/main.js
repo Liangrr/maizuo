@@ -1,19 +1,14 @@
-
 import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-//import axios from 'axios'
-//
-//axios.get('/v4/api/film/now-playing?__t=1533025585545&page=1&count=5')
-//.then(function (response) {
-//  console.log(response);
-//})
-//.catch(function (error) {
-//  console.log(error);
-//});
+import filters from '@/filters/filterDate.js';
+
+Vue.use(filters);
 
 Vue.prototype.$center = new Vue();
+
+Vue.config.productionTip = false
 
 new Vue({
   el: '#app',

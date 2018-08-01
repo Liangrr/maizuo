@@ -14,11 +14,11 @@
 import AppHeader from '@/components/common/AppHeader'
 import AppNav from '@/components/common/AppNav'
 export default {
-name: 'App',
-components: {
+  name: 'App',
+  components: {
     AppHeader,
     AppNav
-}
+  }
 }
 </script>
 

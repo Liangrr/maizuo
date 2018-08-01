@@ -14,6 +14,10 @@ module.exports = {
     	'/v4':{
     		target:'https://m.maizuo.com',
     		changeOrigin:true
+    	},
+    	'/v2':{
+    		target:'https://api.growingio.com',
+    		changeOrigin:true
     	}
     },
 
