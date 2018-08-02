@@ -6,6 +6,7 @@
 			<p v-if="type==='playing'">{{data.cinemaCount}}家影院上映&nbsp;{{data.watchCount}}人购票</p>
 			<b class="sorce" v-if="type==='playing'">{{data.grade}}</b>
 		</div>
+		
 		<div class="row2" v-if="type==='coming'">
 			<h3>{{data.name}}</h3>
 			<b class="date" v-if="type==='coming'">{{data.premiereAt | format-date}}</b>
@@ -19,11 +20,6 @@
 			data:Object,
 			type:String
 		},
-		data(){
-			return {
-				
-			}
-		}
 	}
 </script>
 

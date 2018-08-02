@@ -2,13 +2,15 @@
 <header class="app-header">
 <div class="trigger" @click="showNav()">
     <span class="menu-icon iconfont icon-liebiao"></span>
-    <h1 class="title">{{title}}</h1>
+    <h1 class="title">&nbsp;&nbsp;{{title}}</h1>
 </div>
 <span class="city-icon">
-    {{city}}
+    {{city}}&nbsp;
     <b class="iconfont icon-xiala2"></b>
 </span>
-<span class="iconfont icon-wode" ></span>
+<span class="iconfont icon-wode" @click="loginAction">
+<!--	<router-link :to="{name:'login'}"></router-link>-->
+</span>
 </header>
 </template>
 
@@ -23,9 +25,20 @@ export default {
     methods: {
         //展示侧边栏
         showNav(){
-            console.log('点击头部，展示侧边栏');
+//      	展示侧边栏传值
             this.$center.$emit('show-nav');
+        },
+        loginAction(){
+//      	跳转到登录界面
+        	this.$router.push({ name: 'login'})
         }
+    },
+    mounted(){
+//  	改变标题收值
+    	this.$center.$on('change-title',(value)=>{
+//  		把标题的值改成切换后的标题
+    		this.title = value;
+    	})
     }
 }
 </script>
@@ -34,9 +47,10 @@ export default {
 .app-header{
     width: 100%;
     height: 50px;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
+    z-index: 90;
     background: #282828;
     display: flex;
 }
@@ -51,17 +65,17 @@ export default {
     line-height: 50px;
 }
 .app-header span.iconfont{
-	font-size: 26px;
+	font-size: 24px;
 }
 .title{
     color: #efefef;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 50px;
     font-weight: normal;
     flex: 1;
 }
 .city-icon{
-    font-size: 12px;
+    font-size: 14px;
     padding-right: 10px;
     position: relative;
 }

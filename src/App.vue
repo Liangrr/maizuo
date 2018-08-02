@@ -28,7 +28,6 @@ components: {
   position: absolute;
   top: 50px;
   left: 0;
-  bottom: 0;
   background: #ebebeb;
 }
 </style>

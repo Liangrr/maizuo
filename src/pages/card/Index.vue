@@ -1,7 +1,7 @@
 <template>
 <div id="card" class="page">
     <h1>卖座卡</h1>
-
+	
 </div>
 </template>
 

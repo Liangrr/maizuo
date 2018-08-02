@@ -16,9 +16,10 @@
 		mounted(){
 			this.bannerSwiper = new Swiper(this.$refs.banner,{
 //				无限滚动
-				loop:true
+				loop:true,
+				autoplay:3000,
 			});
-			
+
 		},
 //		watch只是数据发生变化而已,而结构发生变化得用updated或者nextTick
 		updated(){

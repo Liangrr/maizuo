@@ -10,8 +10,8 @@
     <!-- 侧边栏 -->
     <transition name="silde">
     <ul class="nav-menu"  v-show="isShow">
-        <li v-for="(navItem, i) in navList" :key="i" 
-            @click="changePage(navItem.path)">
+        <li v-for="(navItem, index) in navList" :key="index" 
+            @click="changePage(navItem.path,index)">
             {{navItem.title}}
             <b class="iconfont icon-youjiantou"></b>
         </li>
@@ -22,6 +22,7 @@
 
 <script>
 export default {
+
     data(){
         return {
             isShow: false,
@@ -36,6 +37,7 @@ export default {
         }
     },
     created(){
+//  	展示侧滑栏收值
         this.$center.$on('show-nav', ()=>{
             this.isShow = true;
         });
@@ -46,9 +48,13 @@ export default {
             this.isShow = false;
         },
         //切换界面
-        changePage(path){
+        changePage(path,index){
+//      	改变路径
             this.$router.push(path);
+//          隐藏侧滑栏
             this.hideNav();
+//          改变标题传值
+			this.$center.$emit('change-title',this.navList[index].title);
         }
     }
 }
@@ -58,7 +64,7 @@ export default {
 .big-cover{
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background: transparent;
@@ -66,7 +72,7 @@ export default {
 }
 .small-cover{
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 50px;
     bottom: 0;
     left: 0;
@@ -92,7 +98,7 @@ export default {
     border-top: 1px solid #222;
     background: #282828;
     width: 70%;
-    position: absolute;
+    position: fixed;
     top: 50px;
     bottom: 0;
     left: 0;

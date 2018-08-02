@@ -10,6 +10,8 @@ import Shop from '@/pages/shop/Index.vue'
 import Mine from '@/pages/mine/Index.vue'
 import Card from '@/pages/card/Index.vue'
 
+import Login from '@/pages/login/Index.vue'
+
 export default new Router({
   routes: [
     {
@@ -42,6 +44,11 @@ export default new Router({
       path: '/card',
       name: 'card',
       component: Card
-    }
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
   ]
 })
