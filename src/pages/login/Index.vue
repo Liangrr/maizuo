@@ -1,30 +1,38 @@
 <template>
 <div id="login" class="page">
-    <input id="phone" type="text" placeholder="输入手机号" />
-    <div class="inp_bg"></div>
-    
-    <input id='code' type="text" placeholder="输入验证码" />
-    <div class="inp_bg"></div>
-    
-    <button id="loginBtn">登录</button>
+	<div class="login_bg">
+	    <input id="phone" type="text" placeholder="输入手机号" />
+	    <div class="inp_bg"></div>
+	    
+	    <input id='code' type="text" placeholder="输入验证码" />
+	    <div class="inp_bg"></div>
+	    
+	    <button id="loginBtn">登录</button>
+	</div>
 </div>
 </template>
 
 <script>
 export default {
-
+	
+	
 }
 </script>
 
 <style>
 #login{
-	position: absolute;
+	position: relative;
 	top: 0px;
     min-height: 100%;
     width: 100%;
     background-color: #f6f6f6;
 }
-
+.login_bg{
+	width: 100%;
+	position: absolute;
+	top: 50px;
+	min-height: 100%;
+}
 #login input{
 	width: 78%;
 	height: 30px;

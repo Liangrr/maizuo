@@ -5,7 +5,7 @@
     <h1 class="title">&nbsp;&nbsp;{{$store.state.title}}</h1>
 </div>
 <span class="city-icon" @click="cityAction">
-    {{city}}&nbsp;
+    {{$store.state.city}}&nbsp;
     <!--{{$store.state.city}}&nbsp;-->
     <b class="iconfont icon-xiala2"></b>
 </span>
@@ -18,8 +18,7 @@
 export default {
     data(){
         return {
-//          title: '卖座电影',
-            city: '深圳'
+        	
         }
     },
     methods: {
@@ -31,9 +30,11 @@ export default {
         loginAction(){
 //      	跳转到登录界面
         	this.$router.push({ name: 'login'})
+        	this.$store.commit('changeTitle','登录');
         },
         cityAction(){
         	this.$router.push({name:'location'})
+        	this.$store.commit('changeTitle','选择城市');
         }
     },
 

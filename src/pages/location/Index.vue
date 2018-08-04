@@ -18,7 +18,7 @@ export default {
 			console.log(result)
 			this.cityData = result;
 		})
-	}
+	},
 }
 </script>
 
