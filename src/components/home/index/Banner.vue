@@ -17,12 +17,13 @@
 			this.bannerSwiper = new Swiper(this.$refs.banner,{
 //				无限滚动
 				loop:true,
-				autoplay:3000,
+				autoplay:1001,
+				speed:1000,
 			});
-
+//			此处轮播图有一个bug,不能自动播放
 		},
 //		watch只是数据发生变化而已,而结构发生变化得用updated或者nextTick
-		updated(){
+		updated(){	
 //			更新
 			this.bannerSwiper.update();
 //			重新计算滚动

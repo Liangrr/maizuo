@@ -1,4 +1,5 @@
 <template>
+<!--<page id="films" :onScroll="handlePageScroll" ref='page'>-->
 <page id="films" :onScroll="handlePageScroll" ref='page'>
     <nav class="nav">
         <li v-for="(item, index) in navData" :key="index" 
@@ -129,6 +130,9 @@ export default {
 	background-color: #f9f9f9;
 	padding:0 15px;
 	box-sizing: border-box;
+	position: absolute;
+	top: 50px;
+	left: 0;
 }
 .nav{
 	width: 100%;

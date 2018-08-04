@@ -1,5 +1,5 @@
 <template>
-<div id="cinema" class="page" ref="page">
+<page id="cinema" class="page" ref="page">
 	<ul>
         <li v-for="(value, key) in cinemaData" :key="key">
             <p class="title" @click="showCinemas(key)">{{key}}</p>
@@ -10,7 +10,7 @@
             </ul>
         </li>
     </ul>
-</div>
+</page>
 </template>
 
 <script>

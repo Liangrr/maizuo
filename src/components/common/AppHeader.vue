@@ -2,14 +2,14 @@
 <header class="app-header">
 <div class="trigger" @click="showNav()">
     <span class="menu-icon iconfont icon-liebiao"></span>
-    <h1 class="title">&nbsp;&nbsp;{{title}}</h1>
+    <h1 class="title">&nbsp;&nbsp;{{$store.state.title}}</h1>
 </div>
-<span class="city-icon">
+<span class="city-icon" @click="cityAction">
     {{city}}&nbsp;
+    <!--{{$store.state.city}}&nbsp;-->
     <b class="iconfont icon-xiala2"></b>
 </span>
 <span class="iconfont icon-wode" @click="loginAction">
-<!--	<router-link :to="{name:'login'}"></router-link>-->
 </span>
 </header>
 </template>
@@ -18,7 +18,7 @@
 export default {
     data(){
         return {
-            title: '卖座电影',
+//          title: '卖座电影',
             city: '深圳'
         }
     },
@@ -31,15 +31,12 @@ export default {
         loginAction(){
 //      	跳转到登录界面
         	this.$router.push({ name: 'login'})
+        },
+        cityAction(){
+        	this.$router.push({name:'location'})
         }
     },
-    mounted(){
-//  	改变标题收值
-    	this.$center.$on('change-title',(value)=>{
-//  		把标题的值改成切换后的标题
-    		this.title = value;
-    	})
-    }
+
 }
 </script>
 

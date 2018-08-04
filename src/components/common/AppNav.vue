@@ -22,7 +22,6 @@
 
 <script>
 export default {
-
     data(){
         return {
             isShow: false,
@@ -54,7 +53,7 @@ export default {
 //          隐藏侧滑栏
             this.hideNav();
 //          改变标题传值
-			this.$center.$emit('change-title',this.navList[index].title);
+			this.$store.commit('changeTitle',this.navList[index].title);
         }
     }
 }

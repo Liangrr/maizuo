@@ -24,10 +24,16 @@ const BANNER_API = '/v4/api/billboard/home';
 接口参数：__t:时间戳 
 */
 const CINEMAS_API = '/v4/api/cinema';
+/*
+接口功能：城市地址
+接口参数：__t:时间戳 
+*/
+const CITY_API = '/v4/api/city';
 
 export default {
 	COMING_SOON_API,
 	NOW_PLAYING_API,
 	BANNER_API,
 	CINEMAS_API,
+	CITY_API
 }

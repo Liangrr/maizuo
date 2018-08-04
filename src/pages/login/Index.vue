@@ -1,6 +1,5 @@
 <template>
 <div id="login" class="page">
-	<!--<div class="login_bg">-->
     <input id="phone" type="text" placeholder="输入手机号" />
     <div class="inp_bg"></div>
     
@@ -8,7 +7,6 @@
     <div class="inp_bg"></div>
     
     <button id="loginBtn">登录</button>
-	<!--</div>-->
 </div>
 </template>
 
@@ -21,6 +19,7 @@ export default {
 <style>
 #login{
 	position: absolute;
+	top: 0px;
     min-height: 100%;
     width: 100%;
     background-color: #f6f6f6;

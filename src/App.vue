@@ -3,8 +3,10 @@
 
     <app-header></app-header>
     
-    <router-view></router-view>
-
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
+    
     <app-nav></app-nav>
 
   </div>
@@ -15,19 +17,13 @@ import AppHeader from '@/components/common/AppHeader'
 import AppNav from '@/components/common/AppNav'
 export default {
 name: 'App',
-components: {
-    AppHeader,
-    AppNav
-}
+	components: {
+	    AppHeader,
+	    AppNav
+	}
 }
 </script>
 
 <style>
-.page{
-  width: 100%;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  background: #ebebeb;
-}
+
 </style>
