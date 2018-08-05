@@ -1,5 +1,5 @@
 <template>
-	<div class="filmcard">
+	<div class="filmcard" @click="filmDetailAction(filmId)">
 		<img :src="data.cover"/>
 		<div class="row" v-if="type==='playing'">
 			<h3>{{data.name}}</h3>
@@ -18,8 +18,25 @@
 	export default {
 		props:{
 			data:Object,
-			type:String
+			type:String,
+//			点击哪部电影传进来的ID
+			filmId:Number,
 		},
+		data(){
+			return {
+				
+			}
+		},
+		methods:{
+			filmDetailAction(fid){
+				this.$router.push(
+	                {path: '/filmDetail',query:{filmId:this.filmId}}
+	           	);
+			}
+		},
+		mounted(){
+//			console.log(this.data.id)
+		}
 	}
 </script>
 

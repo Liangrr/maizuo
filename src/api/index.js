@@ -30,10 +30,17 @@ const CINEMAS_API = '/v4/api/cinema';
 */
 const CITY_API = '/v4/api/city';
 
+/*
+接口功能：电影所有详情
+接口参数：__t:时间戳 
+*/
+const FILMS_API = '/v4/api/film';
+
 export default {
 	COMING_SOON_API,
 	NOW_PLAYING_API,
 	BANNER_API,
 	CINEMAS_API,
-	CITY_API
+	CITY_API,
+	FILMS_API
 }

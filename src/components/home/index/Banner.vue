@@ -17,7 +17,8 @@
 			this.bannerSwiper = new Swiper(this.$refs.banner,{
 //				无限滚动
 				loop:true,
-				autoplay:1001,
+				autoplayDisableOnInteraction:false,
+				autoplay:1002,
 				speed:1000,
 			});
 //			此处轮播图有一个bug,不能自动播放

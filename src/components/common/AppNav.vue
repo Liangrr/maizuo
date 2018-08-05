@@ -52,7 +52,7 @@ export default {
             this.$router.push(path);
 //          隐藏侧滑栏
             this.hideNav();
-//          改变标题传值
+//          改变标题传值,vuex原理
 			this.$store.commit('changeTitle',this.navList[index].title);
         }
     }

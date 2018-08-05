@@ -11,6 +11,8 @@ import Shop from '@/pages/shop/Index.vue'
 import Mine from '@/pages/mine/Index.vue'
 import Card from '@/pages/card/Index.vue'
 import Location from '@/pages/location/Index.vue'
+//这个是电影详情页
+import FilmDetail from '@/components/films/detail/filmDetail.vue'
 
 import Login from '@/pages/login/Index.vue'
 
@@ -57,5 +59,10 @@ export default new Router({
       name: 'login',
       component: Login
     },
+    {
+    	path:'/filmDetail',
+    	name:'filmDetail',
+    	component:FilmDetail
+    }
   ]
 })

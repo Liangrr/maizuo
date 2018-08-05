@@ -6,7 +6,6 @@
 </div>
 <span class="city-icon" @click="cityAction">
     {{$store.state.city}}&nbsp;
-    <!--{{$store.state.city}}&nbsp;-->
     <b class="iconfont icon-xiala2"></b>
 </span>
 <span class="iconfont icon-wode" @click="loginAction">

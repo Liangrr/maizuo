@@ -89,3 +89,37 @@ return new Promise((resolve, reject)=>{
     })
 }); 
 }
+
+//请求所有电影数据,电影详情页用到
+export function getFilmsData(filmId){
+return new Promise((resolve, reject)=>{
+    //发送请求
+    axios.get(API.FILMS_API+'/'+filmId, {
+//  axios.get(API.FILMS_API+'/4280', {
+        params: {
+            __t: new Date().getTime(),
+        }
+    })
+    .then(response=>{
+        //处理请求成功的数据
+        let film = response.data.data.film;
+//      单个数据不需要循环遍历
+        let data = {
+//          	图片,导演,主演，地区，语言，上映时间，简介,
+				cover: film.cover.origin,
+            	director:film.director,
+            	actors:film.actors,
+            	nation:film.nation,
+            	language:film.language,
+            	premiereAt:film.premiereAt,
+            	synopsis:film.synopsis,         
+            	name: film.name, //名字备用
+                poster:film.poster.origin,//竖图备用
+		}
+        resolve(data);
+    })
+    .catch(error=>{
+        console.log('失败');
+    })
+}); 
+}

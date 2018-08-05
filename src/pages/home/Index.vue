@@ -2,10 +2,14 @@
 <div id="home">
     <Banner :data='bannerData'/>
     
-	<Film-card v-for='item in playingData' :key='item.id' :data='item' type='playing'/>
+    <div class="new_playing">
+    	<Film-card  v-for='item in playingData' :key='item.id' :filmId='item.id' :data='item' type='playing'/>
+    </div>
 	<div class="more_button" @click="goFilm('playing')">更多热映电影</div>
 	
-	<Film-card v-for='item in comingData' :key='item.id' :data='item' type='coming'/>
+	<div class="coming_soon">
+		<Film-card v-for='item in comingData' :key='item.id' :data='item' type='coming'/>
+	</div>
 	<div class="more_button" @click="goFilm('coming')">更多即将上映电影</div>
 	
 </div>
@@ -14,7 +18,7 @@
 <script>
 import Banner from '@/components/home/index/Banner.vue';
 import FilmCard from '@/components/home/index/FilmCard.vue';
-import {getComingSoonData,getNowPlayingData,getBannerData} from '@/services/filmService';
+import {getComingSoonData,getNowPlayingData,getBannerData} from '../../services/filmService';
 
 export default {
 	components:{
@@ -30,7 +34,6 @@ export default {
 	},
 	methods:{
 		goFilm(flag){
-			console.log(flag)
 			this.$router.push(
                 {path: '/films', query: {flag}}
             );
