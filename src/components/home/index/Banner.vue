@@ -24,7 +24,7 @@
 //			此处轮播图有一个bug,不能自动播放
 		},
 //		watch只是数据发生变化而已,而结构发生变化得用updated或者nextTick
-		updated(){	
+		updated(){
 //			更新
 			this.bannerSwiper.update();
 //			重新计算滚动
@@ -32,6 +32,15 @@
 //			滑动到某一张
 			this.bannerSwiper.slideTo(1,0);
 		},
+		activated(){
+			this.bannerSwiper = new Swiper(this.$refs.banner,{
+//				无限滚动
+				loop:true,
+				autoplayDisableOnInteraction:false,
+				autoplay:1002,
+				speed:1000,
+			});
+		}
 		
 	}
 </script>

@@ -1,5 +1,4 @@
 <template>
-<!--<page id="films" :onScroll="handlePageScroll" ref='page'>-->
 <page id="films" :onScroll="handlePageScroll" ref='page'>
     <nav class="nav">
         <li v-for="(item, index) in navData" :key="index" 
@@ -8,10 +7,10 @@
         </li>
     </nav>
 	<div v-show="show=='playing'">
-		<film-item v-for="item in playingData" :key='item.id' :data='item' type='playing'></film-item>
+		<film-item v-for="item in playingData" :key='item.id' :filmId='item.id' :data='item' type='playing'></film-item>
 	</div>
 	<div v-show="show=='coming'">
-		<film-item v-for="item in comingData"  :key='item.id' :data='item' type='coming'></film-item>
+		<film-item v-for="item in comingData"  :key='item.id' :filmId='item.id' :data='item' type='coming'></film-item>
 	</div>
 </page>
 </template>

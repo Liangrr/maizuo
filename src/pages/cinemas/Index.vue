@@ -5,7 +5,12 @@
             <p class="title" @click="showCinemas(key)">{{key}}</p>
             <ul v-if="value.show" v-once>
                 <li class="cinema" v-for="item in value.data" :key="item.id">
-                    {{item.name}}
+                    <div class="cinema_title">
+	                    <h4>{{item.name}}</h4>
+	                    <p>{{item.address}}</p>
+	                    <p>{{item.geocode}}</p>
+                    </div>
+                    <i class="iconfont icon-youjiantou"></i>
                 </li>
             </ul>
         </li>
@@ -34,7 +39,6 @@ export default {
 	},
 	mounted(){
 		getCinemaListData().then(result=>{
-			console.log(result)
 			this.cinemaData = result;
 		})
 	}
@@ -54,8 +58,40 @@ export default {
     cursor: pointer;
 }
 .cinema {
-    border-radius: 5px;
+	width: 100%;
+	height: 70px;
+	background-color: #fff;
     padding: 10px 0 12px 16px;
     cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+.cinema_title{
+	width: 70%;
+}
+.cinema h4,.cinema p{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.cinema h4{
+	width: 90%;
+	font-weight: 600;
+	color: black;
+	font-size: 14px;
+	opacity: 0.6;
+}
+.cinema p{
+	font-size: 12px;
+	height: 26px;
+	line-height: 26px;
+	width: 100%;
+    color: #ccc;
+}
+.cinema i.iconfont{
+	font-size: 36px;
+	position: absolute;
+	right: 30px;
+	top: 2px;
 }
 </style>

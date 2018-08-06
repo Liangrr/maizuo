@@ -2,14 +2,10 @@
 <div id="home">
     <Banner :data='bannerData'/>
     
-    <div class="new_playing">
-    	<Film-card  v-for='item in playingData' :key='item.id' :filmId='item.id' :data='item' type='playing'/>
-    </div>
+	<Film-card  v-for='item in playingData' :key='item.id' :filmId='item.id' :data='item' type='playing'/>
 	<div class="more_button" @click="goFilm('playing')">更多热映电影</div>
-	
-	<div class="coming_soon">
-		<Film-card v-for='item in comingData' :key='item.id' :data='item' type='coming'/>
-	</div>
+
+	<Film-card v-for='item in comingData' :key='item.id' :filmId='item.id' :data='item' type='coming'/>
 	<div class="more_button" @click="goFilm('coming')">更多即将上映电影</div>
 	
 </div>

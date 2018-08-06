@@ -13,7 +13,7 @@
 				<li>{{filmData.synopsis}}</li>
 			</ul>
 		</div>
-		<button id="ticket">购票</button>
+		<button id="ticket">立即购票</button>
 	</div>
 	
 </div>
@@ -28,20 +28,15 @@ export default {
 			filmData:'',
 		}
 	},
-	methods:{
-		
-	},
-	created(){
-//		这里的有bug,重新进入不刷新
-		console.log(this.$route.query.filmId)
-		getFilmsData(this.$route.query.filmId).then(result=>{
+//	进来时执行
+	activated(){
+//		去电影id进行获取数据
+		let filmId = this.$store.state.filmId;
+//		执行请求获取数据
+		getFilmsData(filmId).then(result=>{
 			this.filmData = result;
 		})
 	},
-//	mounted(){
-//		this.$refs.page.refreshDom();
-//	},
-
 }
 </script>
 

@@ -5,14 +5,21 @@ Vue.use(Vuex)
 
 const state = {
 	title:'瑞影',
-	city:'深圳'
+	city:'深圳',
+	filmId:'',
 };
 const mutations = {
-	changeTitle(state,params){
-		state.title = params;
+//	传进来标题
+	changeTitle(state,title){
+		state.title = title;
 	},
-	changeCity(state,params){
-		state.city = params;
+//	传进来城市
+	changeCity(state,city){
+		state.city = city;
+	},
+//	传进来电影id
+	changeFilmId(state,id){
+		state.filmId = id;
 	}
 }
 

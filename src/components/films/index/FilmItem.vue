@@ -1,5 +1,5 @@
 <template>
-<div class="film-item">
+<div class="film-item" @click="filmDetailAction(filmId)">
     <div class="img">
         <img :src="data.poster"/>
     </div>
@@ -22,8 +22,19 @@
 export default {
     props: {
         data: Object,
-        type: String
-    }
+        type: String,
+//		点击哪部电影传进来的ID
+		filmId:Number,
+    },
+    methods:{
+		filmDetailAction(fid){
+			this.$router.push(
+				{path: '/filmDetail'}
+           	);
+//			把电影id存进vuex
+           	this.$store.commit('changeFilmId',fid)
+		},
+	},
 }
 </script>
 

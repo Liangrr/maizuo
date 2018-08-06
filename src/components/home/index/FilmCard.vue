@@ -22,21 +22,15 @@
 //			点击哪部电影传进来的ID
 			filmId:Number,
 		},
-		data(){
-			return {
-				
-			}
-		},
 		methods:{
 			filmDetailAction(fid){
 				this.$router.push(
-	                {path: '/filmDetail',query:{filmId:this.filmId}}
+					{path: '/filmDetail'}
 	           	);
-			}
+//	           	把电影id存进vuex
+	           	this.$store.commit('changeFilmId',fid)
+			},
 		},
-		mounted(){
-//			console.log(this.data.id)
-		}
 	}
 </script>
 

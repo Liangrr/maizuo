@@ -4,36 +4,33 @@
     <span class="menu-icon iconfont icon-liebiao"></span>
     <h1 class="title">&nbsp;&nbsp;{{$store.state.title}}</h1>
 </div>
-<span class="city-icon" @click="cityAction">
+<span class="city-icon" @click="cityAction()">
     {{$store.state.city}}&nbsp;
     <b class="iconfont icon-xiala2"></b>
 </span>
-<span class="iconfont icon-wode" @click="loginAction">
+<span class="iconfont icon-wode" @click="loginAction()">
 </span>
 </header>
 </template>
 
 <script>
 export default {
-    data(){
-        return {
-        	
-        }
-    },
     methods: {
         //展示侧边栏
         showNav(){
 //      	展示侧边栏传值
             this.$center.$emit('show-nav');
         },
-        loginAction(){
+        loginAction(user){
+        	user = user || '登录';
 //      	跳转到登录界面
         	this.$router.push({ name: 'login'})
-        	this.$store.commit('changeTitle','登录');
+        	this.$store.commit('changeTitle',user);
         },
-        cityAction(){
+        cityAction(city){
+        	city = city || '选择城市';
         	this.$router.push({name:'location'})
-        	this.$store.commit('changeTitle','选择城市');
+        	this.$store.commit('changeTitle',city);
         }
     },
 
